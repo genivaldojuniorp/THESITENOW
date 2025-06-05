@@ -1,0 +1,106 @@
+body.daily-page {
+  display: flex;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  color: #111;
+}
+
+.left {
+  width: 40%;
+  max-width: 400px;
+  padding: 2rem;
+  border-right: 1px solid #eee;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.left .back {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #666;
+  text-decoration: none;
+}
+
+.profile {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 1rem 0;
+}
+
+.left h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.left p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.left a {
+  color: #007aff;
+  text-decoration: none;
+}
+
+.newsletter {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.newsletter input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.newsletter button {
+  padding: 0.5rem 1rem;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+footer a {
+  color: #888;
+  text-decoration: none;
+  margin: 0 0.25rem;
+}
+
+.right {
+  width: 60%;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.post {
+  margin-bottom: 3rem;
+}
+
+.post h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.post img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.post p {
+  font-size: 1rem;
+  line-height: 1.6;
+}

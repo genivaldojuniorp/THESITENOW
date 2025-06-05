@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy Policy</title>
+<style>
+  body {
+    font-family: system-ui, sans-serif;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 0 15px;
+    color: #111;
+    background: #fff;
+  }
+  .back-arrow {
+   position: fixed;
+top: 20px;
+left: 20px;
+font-size: 1.5rem;
+color: #666;
+text-decoration: none;
+transition: opacity 0.3s ease;
+z-index: 1000;
+  }
+  h1 {
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-size: 27px;
+    position: relative;
+    padding-left: 40px; /* Espaço para a setinha */
+    cursor: default;
+    display: inline-block;
+  }
+  h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: #111;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  h1:hover::after {
+    transform: scaleX(1);
+  }
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  a[href^="mailto:"] {
+    color: inherit;
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+  <a href="index.html" class="back-arrow" aria-label="Go back">←</a>
+  <h1>Privacy Policy</h1>
+  <p><strong>Last updated:</strong> June 5, 2025</p>
+
+  <p>We do <strong>not</strong> collect, store, or share any personal information about visitors.</p>
+  <p>No tracking or data collection occurs on this website.</p>
+  <p>You can use the site anonymously and with peace of mind.</p>
+
+  <p>If you have questions, contact us at <a href="mailto:your-email@example.com">your-email@example.com</a>.</p>
+</body>
+</html>

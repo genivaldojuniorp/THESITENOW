@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About me - Genivaldo Junior</title>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-color: #fff;
+      --text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #000;
+        --text-color: #fff;
+      }
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1.hover-underline {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      margin-bottom: 40px;
+      font-size: 27px;
+      color:rgb(10 10 10/var(--tw-text-opacity));
+      font-weight: 500;
+    }
+
+    h2 {
+    font-size: .875rem;
+margin-top: -41px;
+margin-bottom: 70px;
+color: rgb(110, 109, 109);
+--tw-text-opacity: 1;
+line-height: 1.25rem;
+font-weight: 200;
+    }
+
+    h1.hover-underline::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: currentColor;
+      transition: width 0.3s ease;
+    }
+
+    h1.hover-underline:hover::after {
+      width: 100%;
+    }
+
+    .galeria-fotos {
+      position: relative;
+      width: 700px;
+      max-width: 90vw;
+      height: 280px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 0 auto;
+    }
+
+    .foto-virando {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      perspective: 1000px;
+      transition: z-index 0.2s ease;
+      cursor: pointer;
+    }
+
+    .foto-virando:nth-child(1) {
+      top: 10px;
+      left: 0;
+      transform: rotate(-5deg);
+    }
+    .foto-virando:nth-child(2) {
+      top: 30px;
+      left: 180px;
+      transform: rotate(4deg);
+    }
+    .foto-virando:nth-child(3) {
+      top: 5px;
+      left: 350px;
+      transform: rotate(-3deg);
+    }
+    .foto-virando:nth-child(4) {
+      top: 25px;
+      left: 520px;
+      transform: rotate(6deg);
+    }
+
+    .foto-virando:hover {
+      z-index: 10;
+    }
+
+    .foto-virando-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .foto-virando:hover .foto-virando-inner {
+      transform: rotateY(180deg);
+    }
+
+    .foto-frente,
+    .foto-verso {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      backface-visibility: hidden;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+    }
+
+    .foto-frente img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .foto-verso {
+      position: relative;
+      background-image: url('images/fundodasfotos.png');
+      background-size: cover;
+      background-position: center;
+      color: #000;
+      font-weight: bold;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      text-align: center;
+      font-family: 'Special Elite', monospace;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 14px;
+      font-style: normal;
+    }
+
+    .foto-verso::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.05);
+      border-radius: 10px;
+      z-index: 0;
+    }
+
+    .foto-verso > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Evita mudança de cor no texto do verso ao passar o mouse */
+    .foto-verso,
+    .foto-verso * {
+      color: inherit !important;
+      transition: none !important;
+      filter: none !important;
+    }
+
+    @media (max-width: 768px) {
+      .galeria-fotos {
+        position: static;
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .foto-virando {
+        position: relative !important;
+        transform: none !important;
+        width: 90%;
+        max-width: 320px;
+        margin: 0 auto 20px;
+      }
+    }
+
+    .bio-container {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-color);
+    }
+
+    .back-arrow {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 1.5rem;
+      color: #666;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+    }
+
+    .back-arrow:hover {
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-arrow">←</a>
+
+  <h1 class="hover-underline">About</h1>
+  <h2>A little more about who I am.</h2>
+
+  <div class="galeria-fotos">
+    <div class="foto-virando">
+      <div class="foto-virando-inner">
+        <div class="foto-frente">
+          <img src="images/eunaarg.JPG" alt="Profile" />
+        </div>
+        <div class="foto-verso">
+          <p>01/06/2023</p>
+          <p>"Just me in Ushuaia-Argentina"</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="foto-virando">
+      <div class="foto-virando-inner">
+        <div class="foto-frente">
+          <img src="images/argentina.jpg" alt="Foto 2" />
+        </div>
+        <div class="foto-verso">
+          <p>02/06/2024</p>
+          <p>"My favorite country before of Brazil."</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="foto-virando">
+      <div class="foto-virando-inner">
+        <div class="foto-frente">
+          <img src="images/medicina.jpg" alt="Medicina" />
+        </div>
+        <div class="foto-verso">
+          <p>03/06/2024</p>
+          <p>"My other love."</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="foto-virando">
+      <div class="foto-virando-inner">
+        <div class="foto-frente">
+          <img src="images/airpods.HEIC" alt="Airpods Pro Max" />
+        </div>
+        <div class="foto-verso">
+          <p>04/06/2024</p>
+          <p>"My favorite headphone of life."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bio-container">
+    <p>I’m a developer with a deep enthusiasm for crafting digital experiences that are as intuitive as they are impactful. My focus lies in web and iOS development, always aiming to create products that feel smooth, functional, and genuinely enjoyable to use.</p>
+    
+    <p>In recent years, I’ve also been engaged in supporting Brazil’s growing developer community—sharing insights on UI design, frontend technologies, and iOS development. I value the power of thoughtful design and how it shapes the way we interact with technology daily.</p>
+    
+    <p>At my core, I’m driven by the ambition to build world-class applications. Recognition matters, but what truly motivates me is the potential to make a meaningful difference in people’s lives through what I create.</p>
+  </div>
+<footer class="footer">
+  <hr class="footer-line">
+  <a href="#" class="footer-link" onclick="togglePopup()">Contact</a>
+
+  <div id="popup" class="popup hidden">
+    <p>📧 e-mail: <strong>seuemail@email.com</strong></p>
+    <button onclick="togglePopup()">close</button>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    text-align: center;
+    padding: 40px 20px 20px;
+    margin-top: 60px;
+    position: relative;
+  }
+
+  .footer-line {
+    border: none;
+    height: 1px;
+    width: 80%;
+    margin: 0 auto 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .footer-link {
+    font-size: 14px;
+    color: #555;
+    opacity: 0.8;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+  }
+
+  .footer-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+
+  .popup {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 15px 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 100;
+    font-family: Arial, sans-serif;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .popup button {
+    margin-top: 10px;
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .footer-line {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    .footer-link {
+      color: #ccc;
+    }
+    .popup {
+      background: #222;
+      color: #fff;
+      border-color: #555;
+    }
+    .popup button {
+      color: #66aaff;
+    }
+  }
+</style>
+
+<script>
+  function togglePopup() {
+    const popup = document.getElementById("popup");
+    popup.classList.toggle("hidden");
+  }
+</script>
+
+</body>
+</html>
